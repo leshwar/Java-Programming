@@ -1,0 +1,299 @@
+** number to  string **
+var num = 15;
+var a = num.toString();
+var b = num.toString(2);
+var c = num.toString(8);
+var d = num.toString(16);
+The result og a,b,c, and d will be:
+
+15
+1111
+17
+f
+
+
+** to calculate grades **
+class Testy
+{
+byte score;
+
+
+Testy()
+{
+score=78;
+}
+
+
+public static void main(String arg[])
+
+{
+Testy tst=new Testy();
+tst.processGrades();
+}
+
+public void processGrades()
+{
+
+
+if
+(score >=75)
+{
+System.out.println("Your grade is A");
+}
+else
+if
+((score >= 60)&&( score <75 )) 
+{
+System.out.println("Your grade is B");
+}
+if
+((score >=50 )&&(score<60))
+{
+System.out.println("Your grade is C");
+}
+else
+if
+((score >=40 )&&(score <50))
+{
+System.out.println(" Your grade is D");
+}
+else
+if
+(score <40 )
+{
+System.out.println(" Sorry you have no part here,FAILED");
+}
+
+}
+}
+
+** random num **
+public class RandGuess
+{
+    public static void main ( String[] args )
+    {
+        int upperRange;
+        int lowerRange;
+        Random random;
+        int randomFromUserLimits;
+
+        Scanner keyboard = new Scanner(System.in);
+
+        System.out.print("Enter upper limit number: ");
+        upperRange = keyboard.nextInt();
+        System.out.print("Enter lower limit number: ");
+        lowerRange = keyboard.nextInt();
+        random = new Random();
+        randomFromUserLimits = random.nextInt(upperRange-lowerRange) + lowerRange;
+        System.out.println("A random number between " + lowerRange + " and " + upperRange + " = " + randomFromUserLimits);
+    }
+
+}
+
+
+**ran int within the given range **
+public class GeneratingRandomNumbers {
+    public static void main(String[] args) {
+
+        //Generating random numbers within a given number range
+        //setting min and max number borders
+
+        int min = 0; //included
+        int max = 10; //included
+        System.out.println(“generating 5 random numbers between ” + min + ” and ” + max );
+        for (int i = 0; i < 5; i++) {
+            System.out.println(“number generated is –> ” + ((int) (Math.random() * (max – min + 1) ) + min ));
+        }
+        min = 50; //included
+        max = 150; //included
+        System.out.println(“generating 5 random numbers between ” + min + ” and ” + max );
+        for (int i = 0; i < 5; i++) {
+            System.out.println(“number generated is –> ” + ((int) (Math.random() * (max – min + 1) ) + min ));
+        }
+    }
+}
+
+The output(sample) of the program;
+
+run:
+generating 5 random numbers between 0 and 10
+number generated is –> 5
+number generated is –> 0
+number generated is –> 4
+number generated is –> 7
+number generated is –> 4
+generating 5 random numbers between 50 and 150
+number generated is –> 134
+number generated is –> 70
+number generated is –> 125
+number generated is –> 100
+number generated is –> 117
+
+**factorial using recursive  **
+/*
+        Java Factorial Using Recursion Example
+        This Java example shows how to generate factorial of a given number
+        using recursive function.
+*/
+ 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+ 
+public class JavaFactorialUsingRecursion {
+       
+        public static void main(String args[]) throws NumberFormatException, IOException{
+               
+                System.out.println("Enter the number: ");
+               
+                //get input from the user
+                BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+                int a = Integer.parseInt(br.readLine());
+               
+                //call the recursive function to generate factorial
+                int result= fact(a);
+               
+               
+                System.out.println("Factorial of the number is: " + result);
+        }
+       
+        static int fact(int b)
+        {
+                if(b <= 1)
+                        //if the number is 1 then return 1
+                        return 1;
+                else
+                        //else call the same function with the value - 1
+                        return b * fact(b-1);
+        }
+}
+ 
+/*
+Output of this Java example would be
+ 
+Enter the number:
+5
+Factorial of the number is: 120
+*/
+
+
+
+**
+The given code prints out the even numbers between the range of 100 and 200 and then determine the even numbers which are not divisible by 5 and 7. It also find out the sum of all the even numbers between 100 and 200.
+
+class EvenNumbers 
+{
+    public static void main(String[] args) 
+    {
+        int sum=0;
+        System.out.println("Even Numbers between 100 and 200");
+        for(int i=100;i<=200;i++){
+            if(i%2==0){
+                sum+=i;
+                System.out.println(i);
+            }
+        }
+        System.out.println("Even Numbers between 100 and 200 which are not divisible by 5 and 7");
+        for(int i=100;i<=200;i++){
+            if(i%2==0){
+                if((i%7!=0)&&(i%5!=0)){
+                    System.out.println(i);
+                }
+            }
+        }
+        System.out.println("Sum of even numbers: "+sum);
+     }
+}'
+
+**Java print the sum of even number from 1 to 100
+
+class Loops{
+    public static void main(String[] args){
+        int sum=0;
+        for(int i=1;i<=100;i++){
+            if(i%2==0){
+                System.out.println(i);
+                sum+=i;
+            }
+        }
+        System.out.println("Sum of even numbers: "+sum);
+
+    }
+}
+
+**fibbonicci series **
+public class FiboClass {
+
+/**
+* fibonacci fn = fn-1 + fn-2 where f1 = 1 and f2 = 2.
+*/
+public static void main(String[] args) {
+
+
+Scanner scanner = new Scanner(System.in);
+
+System.out.println("Enter n :: ");
+int n = scanner.nextInt();
+
+int f1 = 1;
+int f2 = 1;
+
+System.out.print(f1 + ", "+f2); 
+
+fiborec(n, f1, f2);
+}
+
+private static void fiborec(int n , int f1, int f2){
+
+if(n<=2){
+return;
+}
+
+System.out.print(", "+ (f1+f2));
+fiborec(--n, f2 , (f1+f2));
+}
+
+
+}
+
+** max nd min. num in an array **
+public class MinMax
+{
+
+static public int findMax(int [] arr)
+{
+int max = arr[0];
+for(int i=1;i<arr.length;i++)
+{
+if ( arr[i] > max ) max = arr[i];
+}
+return max;
+}
+static public int findMin(int [] arr)
+{
+int min = arr[0];
+for(int i=1;i<arr.length;i++)
+{
+if ( arr[i] < min ) min = arr[i];
+}
+return min;
+}
+
+static public void main(String [] args)
+{
+int [] [] a = {
+{8,1,2,3,4},
+{1,5,2,3,4,5,6},
+{1,4,5,6,7},
+{4,3,4,6,7}
+};
+int result[] = new int[a.length];
+// go through each row
+for(int i=0; i<a.length; i++)
+{
+result[i] = findMin(a[i]);
+}
+System.out.println(findMax(result));
+}
+}
+
